@@ -9,7 +9,7 @@
               <h1 class="text-grey">Hello,</h1>
               <h1 class="text-white">I'm Tran Le Phuong</h1>
               <span class="text-grey">Information Technology Student</span><br />
-              <v-btn tile dark class="text-yellow mt-8" variant="outlined">Contact me</v-btn>
+              <v-btn tile dark class="text-yellow mt-8" variant="outlined" @click="openFacebook">Contact me</v-btn>
             </div>
           </v-col>
           <v-col cols="2">
@@ -40,18 +40,17 @@
               </v-slider>
               </div>
               <h4 class="mt-n4"> I am a Information Technology Student</h4>
-              <p class="text-grey">Ước tính chi phí cần được xem xét và điều chỉnh trong suốt quá trình thực hiện dự án để phản ánh các chi tiết bổ sung
-                 khi có sẵn và giả định được kiểm tra. Độ chính xác của ước tính dự án sẽ tăng lên khi dự án tiến triển 
-                 trong suốt vòng đời dự án.</p>
+              <br />
+              <p class="text-grey">I am currently looking for a professional and dynamic working environment to 
+                learn and develop my abilities to develop quality software products. 
+                A working environment with challenges and opportunities drives me to perfect my
+                professional knowledge and become a good programmer, creating a lot of value in the future.</p>
             <br />
-            <p class="text-grey">
-              Ước tính chi phí cần được xem xét và điều chỉnh trong suốt quá trình thực hiện dự án để phản ánh các chi 
-              tiết bổ sung khi có sẵn và giả định được kiểm tra. Độ chính xác của ước tính dự án sẽ tăng lên khi dự án 
-              tiến triển trong suốt vòng đời dự án.
-            </p>
-            <v-btn tile dark color="yellow" class="mt-4">
-              Dowload Resume
-            </v-btn>
+            <a href="@/assets/TRANLEPHUONG_INTERN.pdf" download>
+              <v-btn tile dark color="yellow" class="mt-4">
+                Dowload Resume
+              </v-btn>
+            </a>
             </v-col>
           </v-row>
         </div>
@@ -147,7 +146,7 @@
         <div class="hire">
           <v-row>
             <v-col cols="12" sm="8">
-              <h1 class="mt-9">Hire me for your awnsome project</h1>
+              <h1 class="mt-9">Hire me for your awesome project</h1>
               <p class="text-grey">
                   Ước tính chi phí cần được xem xét và điều chỉnh trong suốt quá trình 
                   thực hiện dự án để phản ánh các chi tiết bổ sung khi có sẵn và giả 
@@ -158,7 +157,7 @@
           </v-row>
         </div>
       </v-col>
-      <v-cpl cols="12" sm="12" class="px-16" id="contact">
+      <v-col cols="12" sm="12" class="px-16" id="contact">
         <v-row>
           <v-col cols="12" sm="4">
             <div class="child">
@@ -191,10 +190,11 @@
             <v-btn color="#FBDF7E" class="mt-2">Submit Now</v-btn>
           </v-col>
         </v-row>
-      </v-cpl>
+      </v-col>
     </v-container>
     <FooterView />
   </v-app>
+  <BackToTop />
 </template>
 
 <script>
@@ -203,6 +203,7 @@ import { defineComponent } from 'vue';
 // Components
 import NavBar from '../components/NavBar.vue';
 import FooterView from '../components/FooterView.vue';
+import BackToTop from '../components/BackToTop.vue';
 
 export default defineComponent({
   name: 'HomeView',
@@ -234,8 +235,14 @@ export default defineComponent({
   },
 
   components: {
-    NavBar, FooterView,
+    NavBar, FooterView, BackToTop,
   },
+
+  methods: {
+    openFacebook() {
+      window.open('https://www.facebook.com/fuongfg23', '_blank');
+    },
+  }
 });
 </script>
 <style scoped>
